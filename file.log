@@ -2057,9 +2057,9 @@ El conjunto ha pasado la prueba de medias!!
 
 		Prueba de varianza
 La varianza es : 0.08345550305485953
-El limite inferior es: 0.07798974108451392, y el superior es: 0.08817944960104217
-El conjunto ha pasado la prueba de varianza!!
-La varianza del conjunto se encuentra entre los limites de aceptacion, por lo que no podemos rechazar que el conjunto tiene una varianza de 1/12, con un nivel de aceptacion del 95%
+El limite inferior es: 0.08851532696057286, y el superior es: 0.07830556318451759
+El conjunto no ha pasado la prueba de varianza!!
+El conjunto no ha pasado la prueba de varianza!!
 
 
 		Prueba de Uniformidad

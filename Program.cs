@@ -98,6 +98,11 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 log.WriteLine("La varianza es : " + var);
                 Console.WriteLine("La varianza es : " + var);
 
+                var CHI = new ChiSquared(numAleatorios.Count() - 1);
+                //Usamos como parametro el nivel de confianza
+                chiComplemento = CHI.InverseCumulativeDistribution((0.05 / 2));
+                chiNormal = CHI.InverseCumulativeDistribution((1 - 0.05 / 2));
+
                 //Limites
                 double limInf = 0, limSup = 0;
 
@@ -139,6 +144,10 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 int cont = 0, i = 1;
                 double E = Math.Ceiling(numAleatorios.Count() / m);
                 double chiCalculado = 0;
+
+                var CHI = new ChiSquared(m - 1);
+                //Usamos como parametro emnivel de confianza
+                chiTabla = CHI.InverseCumulativeDistribution(0.95);
 
                 while (inf <= 1 && i <= m)
                 {
@@ -453,7 +462,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
             void teoriaDeColas(int numPersonas, int corridas, double costoHora, double costoHorasExtra, double costoEsperaCamion, double costoAlmacen)
             {
                 log.WriteLine("\n\nSimulacion de la teoria de colas");
-                Console.WriteLine("\n\nSimulacion de la teoria de colas");
+                //Console.WriteLine("\n\nSimulacion de la teoria de colas");
                 if (numPersonas < 3 || numPersonas > 7)
                 {
                     Console.WriteLine("No existe un equipo con ese numero de personas");
@@ -800,11 +809,11 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                                 log.WriteLine(Math.Round(PSE1, 4) + "\t\t" + horaLlegada.TimeOfDay + "\t\t" + horaEntradaDescarga.TimeOfDay + "\t\t" + Math.Round(PSE2, 4) + "\t\t" + tiempoDescarga + "\t\t" + horaSalidaCamion.TimeOfDay + "\t\t" + tiempoEspera);
                             }
                             hrsTiempoExtra = (double)horaSalidaCamion.Subtract(horaLimite).TotalHours;
-                            Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
+                            //Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
                             hrsTiempoEspera = tiempoEsperaTotal / 60;
                             hrsAlmacen = (double)horaSalidaCamion.Subtract(hora).TotalHours;
                         }
-                        Console.WriteLine("\n\nIntervalo de confianza: ");
+                        //Console.WriteLine("\n\nIntervalo de confianza: ");
                         log.WriteLine("\n\nIntervalo de confianza: ");
                         mediaDCostos = mediaDCostos / corridas;
                         log.WriteLine("\nMedia de costos: " + Math.Round(mediaDCostos, 4));
@@ -817,9 +826,9 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                         desvEstandarCostos = desvEstandarCostos / corridas;
                         desvEstandarCostos = Math.Sqrt(desvEstandarCostos);
                         log.WriteLine("La desviacion estandar de los costos es: " + desvEstandarCostos);
-                        Console.WriteLine("La desviacion estandar de los costos es: " + desvEstandarCostos);
+                        //Console.WriteLine("La desviacion estandar de los costos es: " + desvEstandarCostos);
                         desvEstandarCostos = Statistics.StandardDeviation(costos);
-                        Console.WriteLine("La desviacion estandar de los costos modificcada es: " + desvEstandarCostos);
+                        //Console.WriteLine("La desviacion estandar de los costos modificcada es: " + desvEstandarCostos);
                         int1 = 0;
                         int2 = 0;
                         int1 = mediaDCostos - desvEstandarCostos / Math.Sqrt(corridas) * (2.262);
@@ -1077,11 +1086,11 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                                 log.WriteLine(Math.Round(PSE1, 4) + "\t\t" + horaLlegada.TimeOfDay + "\t\t" + horaEntradaDescarga.TimeOfDay + "\t\t" + Math.Round(PSE2, 4) + "\t\t" + tiempoDescarga + "\t\t" + (horaSalidaCamion.AddMinutes(-30)).TimeOfDay + "\t\t" + tiempoEspera);
                             }
                             hrsTiempoExtra = (double)horaSalidaCamion.Subtract(horaLimite).TotalHours;
-                            Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
+                            //Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
                             hrsTiempoEspera = tiempoEsperaTotal / 60;
                             hrsAlmacen = (double)horaSalidaCamion.Subtract(hora).TotalHours;
                         }
-                        Console.WriteLine("\n\nIntervalo de confianza: ");
+                        //Console.WriteLine("\n\nIntervalo de confianza: ");
                         log.WriteLine("\n\nIntervalo de confianza: ");
                         mediaDCostos = mediaDCostos / corridas;
                         log.WriteLine("\nMedia de costos: " + Math.Round(mediaDCostos, 4));
@@ -1350,11 +1359,11 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                                 log.WriteLine(Math.Round(PSE1, 4) + "\t\t" + horaLlegada.TimeOfDay + "\t\t" + horaEntradaDescarga.TimeOfDay + "\t\t" + Math.Round(PSE2, 4) + "\t\t" + tiempoDescarga + "\t\t" + (horaSalidaCamion.AddMinutes(-30)).TimeOfDay + "\t\t" + tiempoEspera);
                             }
                             hrsTiempoExtra = (double)horaSalidaCamion.Subtract(horaLimite).TotalHours;
-                            Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
+                            //Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
                             hrsTiempoEspera = tiempoEsperaTotal / 60;
                             hrsAlmacen = (double)horaSalidaCamion.Subtract(hora).TotalHours;
                         }
-                        Console.WriteLine("\n\nIntervalo de confianza: ");
+                        //Console.WriteLine("\n\nIntervalo de confianza: ");
                         log.WriteLine("\n\nIntervalo de confianza: ");
                         mediaDCostos = mediaDCostos / corridas;
                         log.WriteLine("\nMedia de costos: " + Math.Round(mediaDCostos, 4));
@@ -1624,11 +1633,11 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                                 log.WriteLine(Math.Round(PSE1, 4) + "\t\t" + horaLlegada.TimeOfDay + "\t\t" + horaEntradaDescarga.TimeOfDay + "\t\t" + Math.Round(PSE2, 4) + "\t\t" + tiempoDescarga + "\t\t" + (horaSalidaCamion.AddMinutes(-30)).TimeOfDay + "\t\t" + tiempoEspera);
                             }
                             hrsTiempoExtra = (double)horaSalidaCamion.Subtract(horaLimite).TotalHours;
-                            Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
+                            //Console.WriteLine("Tiempo extra: " + hrsTiempoExtra);
                             hrsTiempoEspera = tiempoEsperaTotal / 60;
                             hrsAlmacen = (double)horaSalidaCamion.Subtract(hora).TotalHours;
                         }
-                        Console.WriteLine("\n\nIntervalo de confianza: ");
+                        //Console.WriteLine("\n\nIntervalo de confianza: ");
                         log.WriteLine("\n\nIntervalo de confianza: ");
                         mediaDCostos = mediaDCostos / corridas;
                         log.WriteLine("\nMedia de costos: " + Math.Round(mediaDCostos, 4));
@@ -1719,7 +1728,8 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 return false;
             }
 
-            void pruebaChiCuadradaPoisson(List<double> variables){
+            void pruebaChiCuadradaPoisson(List<double> variables)
+            {
                 double menor = variables.Min();
                 double mayor = variables.Max();
                 double media = Statistics.Mean(variables);
@@ -1805,7 +1815,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                         ei = n * px;
                         error = Math.Pow((ei - frecuenciaObservada), 2) / ei;
                         chiCalculado = chiCalculado + error;
-                        Console.WriteLine("[" + Math.Round(limiteInferior, 2) + "," + Math.Round(limiteSuperior, 2) + "  ] \t" + frecuenciaObservada  + " \t" + x +  " \t" + Math.Round(px, 5) + "  \t" + Math.Round(ei, 2) + " \t" + Math.Round(error, 2));
+                        Console.WriteLine("[" + Math.Round(limiteInferior, 2) + "," + Math.Round(limiteSuperior, 2) + "  ] \t" + frecuenciaObservada + " \t" + x + " \t" + Math.Round(px, 5) + "  \t" + Math.Round(ei, 2) + " \t" + Math.Round(error, 2));
                         log.WriteLine("[" + Math.Round(limiteInferior, 2) + " - " + Math.Round(limiteSuperior, 2) + "] \t" + frecuenciaObservada + " \t" + x + " \t" + Math.Round(px, 5) + "  \t" + Math.Round(ei, 2) + " \t" + Math.Round(error, 2));
                     }
                     else
@@ -1818,7 +1828,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                         ei = n * px;
                         error = Math.Pow((ei - frecuenciaObservada), 2) / ei;
                         chiCalculado = chiCalculado + error;
-                        Console.WriteLine("[" + Math.Round(limiteInferior, 2) + "," + Math.Round(limiteSuperior, 2) + "  ] \t" + frecuenciaObservada  + " \t" + x +  " \t"  + Math.Round(px, 5) + "  \t" + Math.Round(ei, 2) + " \t" + Math.Round(error, 2));
+                        Console.WriteLine("[" + Math.Round(limiteInferior, 2) + "," + Math.Round(limiteSuperior, 2) + "  ] \t" + frecuenciaObservada + " \t" + x + " \t" + Math.Round(px, 5) + "  \t" + Math.Round(ei, 2) + " \t" + Math.Round(error, 2));
                         log.WriteLine("[" + Math.Round(limiteInferior, 2) + " - " + Math.Round(limiteSuperior, 2) + "] \t\t" + frecuenciaObservada + " \t" + x + " \t" + Math.Round(px, 5) + "  \t" + Math.Round(ei, 2) + " \t" + Math.Round(error, 2));
                     }
                     inter++;
@@ -1827,7 +1837,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 Console.WriteLine("Chi Calculado: " + Math.Round(chiCalculado, 2));
                 Console.WriteLine("Chi Tabla: " + Math.Round(chiTabla, 2));
                 log.WriteLine("Chi Tabla: " + chiTabla);
-                if(chiCalculado < chiTabla)
+                if (chiCalculado < chiTabla)
                 {
                     Console.WriteLine("Se ha pasado la prueba");
                     log.WriteLine("Se ha pasado la prueba\n\n");
@@ -1839,7 +1849,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 }
 
             }
-            
+
             void pruebaChiCuadradaNormal(List<double> variables)
             {
                 double menor = variables.Min();
@@ -1861,7 +1871,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 media = 10;
                 desvEstandar = 6.5;
                 */
-                
+
 
                 Console.WriteLine("\n\nPrueba de Chi Cuadrada normal:\n");
                 Console.WriteLine("Datos de la muestra:");
@@ -1905,7 +1915,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 //Usamos como parametro el nivel de confianza
                 double chiTabla = CHI.InverseCumulativeDistribution(0.95);
 
-                while (inter < m)   
+                while (inter < m)
                 {
                     frecuenciaObservada = 0;
                     limiteInferior = 0 + (inter * anchoClase);
@@ -1961,7 +1971,7 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
                 Console.WriteLine("Chi Calculado: " + Math.Round(chiCalculado, 2));
                 Console.WriteLine("Chi Tabla: " + chiTabla);
                 log.WriteLine("Chi Tabla: " + chiTabla);
-                if(chiCalculado < chiTabla)
+                if (chiCalculado < chiTabla)
                 {
                     Console.WriteLine("Se ha pasado la prueba");
                     log.WriteLine("Se ha pasado la prueba");
@@ -1974,38 +1984,20 @@ namespace ALGORITMOLINEAL // Note: actual namespace depends on the project name.
             }
 
             numAleatorios.RemoveRange(0, numAleatorios.Count());
-            
+
             //x, k, g, c
-            generarNumerosAleatorios(5,7,11,2047);
+            //generarNumerosAleatorios(6, 15, 13, 8191);
+            generarNumerosAleatorios(5, 7, 11, 2047);
             print();
             //Pruebas
             pruebaDeMedias(1.96);
-            pruebaVarianza(95,1915.74, 2166.04);
-            pruebaUniformidad(61.65);
+            pruebaVarianza(95, 0, 0);
+            pruebaUniformidad(0);
             pruebaIndependencia(-1.96, 1.96, 95);
-            
 
-            //generarNumerosAleatorios(6, 15, 13, 8191);
-            //print();
-            //Los valores de ambas chi, las sacamos de excel usando INV.CHICUAD(alfa, n-1)
-            //Pruebas
-            /*
-            pruebaDeMedias(1.96);
-            pruebaVarianza(95, 7942.039569, 8443.748976);
-            pruebaUniformidad(113.145);
-            pruebaIndependencia(-1.96, 1.96, 95);
-            */
             unDado(10);
             //num de trabajadores, corridas, costo horas normales, costo horas extras, costo horas de espera, costo de almacen
-            teoriaDeColas(3, 10, 25.0, 37.5, 100, 500);
-
-            double valor = F(0.5);
-            Console.WriteLine(valor);
-
-            var NORMAL = new Normal(0, 1);
-            double x = NORMAL.CumulativeDistribution(0.5);
-            Console.WriteLine("aaaaaaaaaaaaaaa" + x);
-
+            //teoriaDeColas(3, 10, 25.0, 37.5, 100, 500);
             //generadorVariablesPoisson(60, 17);
             //generadorVariablesNormales(100, 6.5, 10);
             //pruebaChiCuadradaNormal(generadorVariablesNormales(100, 6.5, 10));
