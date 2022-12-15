@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "McQgVD/jK5A9VRZ6vMsnI3YqWHils7AK2yLEQ9SHrbmLAPVfDgyyA+ACuvRJy/MN3xOPJmbTUwYK4v6SjV+ciA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\wachi\\OneDrive\\Escritorio\\SIMULACION\\AlgoritmoLineal\\AlgoritmoLineal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wachi\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

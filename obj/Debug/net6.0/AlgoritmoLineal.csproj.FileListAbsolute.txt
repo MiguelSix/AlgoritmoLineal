@@ -1,0 +1,17 @@
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\bin\Debug\net6.0\AlgoritmoLineal.exe
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\bin\Debug\net6.0\AlgoritmoLineal.deps.json
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\bin\Debug\net6.0\AlgoritmoLineal.runtimeconfig.json
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\bin\Debug\net6.0\AlgoritmoLineal.dll
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\bin\Debug\net6.0\AlgoritmoLineal.pdb
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.csproj.AssemblyReference.cache
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.AssemblyInfoInputs.cache
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.AssemblyInfo.cs
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.csproj.CoreCompileInputs.cache
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.dll
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\refint\AlgoritmoLineal.dll
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.pdb
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.genruntimeconfig.cache
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\ref\AlgoritmoLineal.dll
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\bin\Debug\net6.0\MathNet.Numerics.dll
+C:\Users\wachi\OneDrive\Escritorio\SIMULACION\AlgoritmoLineal\obj\Debug\net6.0\AlgoritmoLineal.csproj.CopyComplete
